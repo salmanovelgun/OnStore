@@ -1,0 +1,30 @@
+﻿<Window x:Class="Lesson5WPFhomework.AddEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lesson5WPFhomework"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="AddEdit" Height="200" Width="200" WindowStyle="None" 
+        ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True">
+    <Border Background="#312C38" CornerRadius="10">
+        <Grid>
+            <Label Foreground="#F7EFE7" Margin="10,20,0,0" FontSize="15">Name:</Label>
+            <TextBox x:Name="Name" Foreground="#F7EFE7" BorderBrush="#F7EFE7" Margin="65,20,10,156" FontSize="12" materialDesign:HintAssist.Hint="Enter the name..."
+                     Text="{Binding TProduct.Name, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            
+            <Label Foreground="#F7EFE7" Margin="10,60,0,0" FontSize="15">Price:</Label>
+            <TextBox x:Name="Price" Foreground="#F7EFE7" BorderBrush="#F7EFE7" Margin="65,60,10,116" FontSize="12" materialDesign:HintAssist.Hint="Enter the price..."
+                     Text="{Binding TProduct.Price, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+
+            <Label Foreground="#F7EFE7" Margin="10,100,0,0" FontSize="15">Count:</Label>
+            <TextBox x:Name="Count" Foreground="#F7EFE7" BorderBrush="#F7EFE7" Margin="65,100,10,76" FontSize="12" materialDesign:HintAssist.Hint="Enter the count..."
+                     Text="{Binding TProduct.CountInStock, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+
+            <Border Background="#E73C37" Width="50" Height="50" CornerRadius="25" Margin="75,130,75,5" Cursor="Hand" MouseDown="Border_MouseDown">
+                <materialDesign:PackIcon x:Name="AddEditIcon" Kind="EditOutline" Foreground="#F7EFE7" Width="40" Height="40" Margin="5"></materialDesign:PackIcon>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
